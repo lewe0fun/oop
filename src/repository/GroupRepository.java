@@ -2,7 +2,7 @@ package repository;
 
 import data.StudentGroup;
 
-public class GroupRepository implements Repository<StudentGroup,Integer>{
+public class GroupRepository implements Repository<StudentGroup, Integer> {
 
     @Override
     public StudentGroup save(StudentGroup entity) {

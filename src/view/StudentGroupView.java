@@ -5,7 +5,7 @@ import data.User;
 
 import java.util.List;
 
-public class StudentGroupView extends GroupView{
+public class StudentGroupView extends GroupView {
 
     @Override
     public User findGroup(List<StudentGroup> studentGroup) {

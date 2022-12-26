@@ -17,8 +17,8 @@ public class TeacherService {
     public Teacher findByLastName(String LastName) {
         return teacherRepository.findByLastName(LastName);
     }
-    public Teacher findBuId(int id)
-    {
+
+    public Teacher findById(int id) {
         return teacherRepository.findById(id);
     }
 }

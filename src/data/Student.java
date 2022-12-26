@@ -1,14 +1,15 @@
 package data;
 
-public class Student extends User implements Comparable<Student>{
+public class Student extends User implements Comparable<Student> {
     private String department;
     private int course;
     private int yearOfBirth;
-    public Student(String firstName, String lastName, int id,String department,int course,int yearOfBirth) {
+
+    public Student(String firstName, String lastName, int id, String department, int course, int yearOfBirth) {
         super(firstName, lastName, id);
-        this.course=course;
-        this.department=department;
-        this.yearOfBirth=yearOfBirth;
+        this.course = course;
+        this.department = department;
+        this.yearOfBirth = yearOfBirth;
     }
 
     public String getDepartment() {
@@ -29,6 +30,6 @@ public class Student extends User implements Comparable<Student>{
 
     @Override
     public int compareTo(Student o) {
-        return Integer.compare(this.yearOfBirth,o.yearOfBirth);
+        return Integer.compare(this.yearOfBirth, o.yearOfBirth);
     }
 }

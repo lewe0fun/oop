@@ -10,7 +10,7 @@ import java.util.Iterator;
 import static utils.ReadFromTxt.getStudentsFromTxt;
 import static utils.ReadFromTxt.getTeacherFromTxt;
 
-public class StudentGroupServiceImpl implements DataService<Student>{
+public class StudentGroupServiceImpl implements DataService<Student> {
     private final Repository<StudentGroup, Integer> studentGroupIntegerRepository;
 
     public StudentGroupServiceImpl(Repository<StudentGroup, Integer> studentGroupIntegerRepository) {

@@ -2,7 +2,7 @@ package repository;
 
 import data.Student;
 
-public class StudentRepository implements UserRepository<Student,Integer>{
+public class StudentRepository implements UserRepository<Student, Integer> {
 
 
     @Override

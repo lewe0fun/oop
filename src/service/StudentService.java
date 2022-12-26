@@ -1,5 +1,6 @@
 package service;
 //Реализовать методы поиска и сохранения в классе TeacherService
+
 import data.Student;
 import repository.StudentRepository;
 
@@ -17,8 +18,8 @@ public class StudentService {
     public Student findByLastName(String LastName) {
         return studentRepository.findByLastName(LastName);
     }
-    public Student findBuId(int id)
-    {
+
+    public Student findById(int id) {
         return studentRepository.findById(id);
     }
 }

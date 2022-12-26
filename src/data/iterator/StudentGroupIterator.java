@@ -6,14 +6,14 @@ import data.StudentGroup;
 import java.util.List;
 import java.util.Iterator;
 
-public class StudentGroupIterator implements Iterator<Student>{
+public class StudentGroupIterator implements Iterator<Student> {
     private int cursor;
     private StudentGroup studentGroup;
     private List<Student> students;
 
     public StudentGroupIterator(StudentGroup studentGroup) {
         this.studentGroup = studentGroup;
-        this.students=studentGroup.getStudentList();
+        this.students = studentGroup.getStudentList();
     }
 
     @Override

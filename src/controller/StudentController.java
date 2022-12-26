@@ -19,7 +19,7 @@ public class StudentController implements UserController<Student, Integer> {
 
     @Override
     public Student findById(Integer id) {
-        return studentService.findBuId(id);
+        return studentService.findById(id);
     }
 
     @Override

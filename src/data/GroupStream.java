@@ -5,7 +5,7 @@ import data.iterator.GroundStreamIterator;
 import java.util.List;
 import java.util.Iterator;
 
-public class GroupStream implements Iterable<StudentGroup>{
+public class GroupStream implements Iterable<StudentGroup> {
     private List<StudentGroup> studentGroup;
 
     public GroupStream(List<StudentGroup> studentGroup) {

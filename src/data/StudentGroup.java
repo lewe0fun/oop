@@ -6,10 +6,10 @@ import data.iterator.StudentGroupIterator;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student>{
-private Teacher teacher;
-private List<Student> studentList;
-private int groupNumber;
+public class StudentGroup implements Iterable<Student> {
+    private Teacher teacher;
+    private List<Student> studentList;
+    private int groupNumber;
 
     public StudentGroup(Teacher teacher, List<Student> studentList) {
         this.teacher = teacher;
@@ -17,7 +17,7 @@ private int groupNumber;
     }
 
     public StudentGroup(Teacher teacher, List<Student> studentList, int groupNumber) {
-        this(teacher,studentList);
+        this(teacher, studentList);
         this.groupNumber = groupNumber;
     }
 
