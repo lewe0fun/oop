@@ -5,6 +5,10 @@ public abstract class User {
     private String lastName;
     private int id;
 
+    public User(String lastName) {
+        this.lastName = lastName;
+    }
+
     public User(String firstName, String lastName, int id) {
         this.firstName = firstName;
         this.lastName = lastName;

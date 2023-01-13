@@ -5,6 +5,10 @@ public class Student extends User implements Comparable<Student> {
     private int course;
     private int yearOfBirth;
 
+    public Student(String lastName) {
+        super(lastName);
+    }
+
     public Student(String firstName, String lastName, int id, String department, int course, int yearOfBirth) {
         super(firstName, lastName, id);
         this.course = course;

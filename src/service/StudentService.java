@@ -22,4 +22,6 @@ public class StudentService {
     public Student findById(int id) {
         return studentRepository.findById(id);
     }
+    public Student createStudent(Student student){return null;}
+    public Student deleteStudent(Student Student){return null;}
 }
