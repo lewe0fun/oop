@@ -1,35 +1,31 @@
 package terminal;
 //только один экземпляр terminalReader
-
 import terminal.executable.CommandExecutable;
 import terminal.executable.CommandExecutableFactory;
-
 import java.util.Scanner;
-
 public class TerminalReader {
-    private static TerminalReader terminalReader;
-    private final CommandParser commandParser;
+    private static TerminalReader terminalReader;//приватный статичный экземпляр класса
+    private final CommandParser commandParser;//реализуем метод интерфейса через экземпляр класса для парсинга команд
 
     private TerminalReader(CommandParser commandParser) {
         this.commandParser = commandParser;
-    }
+    }//приватный конструктор
 
-    public TerminalReader getInstance(CommandParser commandParser) {
+    public static TerminalReader getInstance(CommandParser commandParser) {
         if (terminalReader == null) {
             terminalReader = new TerminalReader(commandParser);
         }
         return terminalReader;
-    }
+    }//Фабричный метод
 
     public void listen() {
         Scanner sc = new Scanner(System.in);
-        for (;;) {
+        while (true) {
             String cmd = sc.nextLine();
-            String[] cmds = commandParser.parseCommand(cmd);
-            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();
+            String[] cmds = commandParser.parseCommand(cmd);//парсинг команд
+            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();//фабрика
             CommandExecutable commandExecutable = commandExecutableFactory.create(cmds);
             commandExecutable.execute();
         }
-
     }
 }
