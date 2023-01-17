@@ -32,6 +32,7 @@ public class CommandExecutableFactory {
             terminalCmdView.rm();
             return new DeleteStudentByGroupNumberAndAgeExecutable(studentService, Integer.parseInt(input[6]), Integer.parseInt(input[7]));
         }
+        terminalCmdView.unknown();
         return null;
     }
 }
