@@ -1,5 +1,4 @@
 package service;
-//Реализовать методы поиска и сохранения в классе TeacherService
 
 import data.Student;
 import repository.StudentRepository;
@@ -23,5 +22,8 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public void deleteStudent(Student Student){}
+    public void remove(Student student) {
+        studentRepository.delete(student);
+    }
+
 }

@@ -1,5 +1,6 @@
 package service;
 
+import data.Student;
 import data.Teacher;
 import repository.TeacherRepository;
 
@@ -20,5 +21,8 @@ public class TeacherService {
 
     public Teacher findById(int id) {
         return teacherRepository.findById(id);
+    }
+    public void remove(Teacher teacher) {
+        teacherRepository.delete(teacher);
     }
 }

@@ -11,6 +11,11 @@ public class StudentRepository implements UserRepository<Student, Integer> {
     }
 
     @Override
+    public void delete(Student entity) {
+
+    }
+
+    @Override
     public Student findById(Integer id) {
         return null;
     }
