@@ -1,14 +1,14 @@
 package terminal;
 //только один экземпляр terminalReader
 
-import terminal.executable.CommandExecutable;
-import terminal.executable.CommandExecutableFactory;
+import terminal.executable.*;
 
 import java.util.Scanner;
 
 public class TerminalReader {
     private static TerminalReader terminalReader;//приватный статичный экземпляр класса
     private final CommandParser commandParser;//реализуем метод интерфейса через экземпляр класса для парсинга команд
+
 
     private TerminalReader(CommandParser commandParser) {
         this.commandParser = commandParser;
@@ -25,9 +25,9 @@ public class TerminalReader {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String cmd = sc.nextLine();
-            String[] cmds = commandParser.parseCommand(cmd);//парсинг команд
-            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();//фабрика
-            CommandExecutable commandExecutable = commandExecutableFactory.create(cmds);
+            Command cmds = commandParser.parseCommand(cmd);//парсинг команд
+            CommandExecutableFactory commandExecutableFactoryImpl = new LogingCommandExecutableFactoryImpl();//logging
+            CommandExecutable commandExecutable = commandExecutableFactoryImpl.create(cmds);
             if (commandExecutable != null) {
                 commandExecutable.execute();
             }
