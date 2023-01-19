@@ -27,13 +27,12 @@ public class TerminalReader {
         }
         return terminalReader;
     }//Фабричный метод
-
+    CommandExecutableFactory commandExecutableFactoryImpl = new LoggingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()),new StudentView(),new TerminalCmdView());//logging
     public void listen() {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String cmd = sc.nextLine();
             Command cmds = commandParser.parseCommand(cmd);//парсинг команд
-            CommandExecutableFactory commandExecutableFactoryImpl = new LoggingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()),new StudentView(),new TerminalCmdView());//logging
             CommandExecutable commandExecutable = commandExecutableFactoryImpl.create(cmds);
             if (commandExecutable != null) {
                 commandExecutable.execute();
