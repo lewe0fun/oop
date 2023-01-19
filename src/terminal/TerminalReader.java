@@ -1,7 +1,14 @@
 package terminal;
 //только один экземпляр terminalReader
 
-import terminal.executable.*;
+import repository.StudentRepository;
+import service.StudentService;
+import terminal.executable.Command;
+import terminal.executable.CommandExecutable;
+import terminal.executable.CommandExecutableFactory;
+import terminal.executable.LogingCommandExecutableFactoryImpl;
+import view.StudentView;
+import view.TerminalCmdView;
 
 import java.util.Scanner;
 
@@ -26,7 +33,7 @@ public class TerminalReader {
         while (true) {
             String cmd = sc.nextLine();
             Command cmds = commandParser.parseCommand(cmd);//парсинг команд
-            CommandExecutableFactory commandExecutableFactoryImpl = new LogingCommandExecutableFactoryImpl();//logging
+            CommandExecutableFactory commandExecutableFactoryImpl = new LogingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()),new StudentView(),new TerminalCmdView());//logging
             CommandExecutable commandExecutable = commandExecutableFactoryImpl.create(cmds);
             if (commandExecutable != null) {
                 commandExecutable.execute();

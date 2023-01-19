@@ -7,15 +7,16 @@ import view.TerminalCmdView;
 
 import java.util.List;
 
-public class CommandExecutableFactoryImpl extends Command implements CommandExecutableFactory{
-    private  StudentService studentService;
-    private StudentView studentView;
-    private TerminalCmdView terminalCmdView;
+public class CommandExecutableFactoryImpl implements CommandExecutableFactory{
+    private final StudentService studentService;
+    private final StudentView studentView;
+    private final TerminalCmdView terminalCmdView;
 
-    public CommandExecutableFactoryImpl(String initCommand, List<String> arguments) {
-        super(initCommand, arguments);
+    public CommandExecutableFactoryImpl(StudentService studentService, StudentView studentView, TerminalCmdView terminalCmdView) {
+        this.studentService = studentService;
+        this.studentView = studentView;
+        this.terminalCmdView = terminalCmdView;
     }
-
 
     public CommandExecutable create(Command input) {
         Student currentStudent = new Student(input.getFirstArgument(), input.getSecondArgument(), Integer.parseInt(input.getThirdArgument()), input.getFourthArgument(), Integer.parseInt(input.getFifthArgument()), Integer.parseInt(input.getSixthArgument()), Integer.parseInt(input.getSeventhArgument()));

@@ -1,13 +1,16 @@
 package terminal.executable;
 
+import repository.StudentRepository;
 import service.StudentService;
 import view.StudentView;
 import view.TerminalCmdView;
 
+import java.util.List;
+
 public class LogingCommandExecutableFactoryImpl extends CommandExecutableFactoryImpl {
 
-    public LogingCommandExecutableFactoryImpl() {
-        super();
+    public LogingCommandExecutableFactoryImpl(StudentService studentService, StudentView studentView, TerminalCmdView terminalCmdView) {
+        super(studentService,studentView,terminalCmdView);
     }
 
     @Override
