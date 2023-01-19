@@ -15,7 +15,7 @@ public class LoggingCommandExecutableFactoryImpl extends CommandExecutableFactor
     {
         System.out.println(input);
         CommandExecutable commandExecutable=super.create(input);//метод предка
-        System.out.println("finish");
+        System.out.println("logging finished");
         return commandExecutable;
     }//переопределенный метод
 }

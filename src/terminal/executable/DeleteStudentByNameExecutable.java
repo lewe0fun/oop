@@ -1,6 +1,5 @@
 package terminal.executable;
 
-import data.Student;
 import service.StudentService;
 
 public class DeleteStudentByNameExecutable implements CommandExecutable {

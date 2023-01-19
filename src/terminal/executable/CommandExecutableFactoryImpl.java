@@ -1,5 +1,5 @@
 package terminal.executable;
-
+//убрать повторяющийся код
 import data.Student;
 import service.StudentService;
 import view.StudentView;

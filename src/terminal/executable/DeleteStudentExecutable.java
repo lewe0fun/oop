@@ -3,7 +3,7 @@ package terminal.executable;
 import data.Student;
 import service.StudentService;
 
-public class DeleteStudentExecutable implements CommandExecutable{
+public class DeleteStudentExecutable implements CommandExecutable {
     protected final StudentService studentService;
     protected final Student student;
 
