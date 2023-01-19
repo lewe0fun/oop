@@ -6,14 +6,14 @@ import data.StudentGroup;
 import java.util.Iterator;
 import java.util.List;
 
-public class GroundStreamIterator implements Iterator<StudentGroup> {
+public class GroupStreamIterator implements Iterator<StudentGroup> {
     private int cursor;
-    private GroupStream groundStream;
+    private GroupStream groupStream;
     private List<StudentGroup> studentGroups;
 
-    public GroundStreamIterator(GroupStream groundStream) {
-        this.groundStream = groundStream;
-        this.studentGroups = groundStream.getStudentGroup();
+    public GroupStreamIterator(GroupStream groupStream) {
+        this.groupStream = groupStream;
+        this.studentGroups = groupStream.getStudentGroup();
     }
 
     @Override
