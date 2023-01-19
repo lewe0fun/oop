@@ -6,7 +6,7 @@ import service.StudentService;
 import terminal.executable.Command;
 import terminal.executable.CommandExecutable;
 import terminal.executable.CommandExecutableFactory;
-import terminal.executable.LogingCommandExecutableFactoryImpl;
+import terminal.executable.LoggingCommandExecutableFactoryImpl;
 import view.StudentView;
 import view.TerminalCmdView;
 
@@ -33,7 +33,7 @@ public class TerminalReader {
         while (true) {
             String cmd = sc.nextLine();
             Command cmds = commandParser.parseCommand(cmd);//парсинг команд
-            CommandExecutableFactory commandExecutableFactoryImpl = new LogingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()),new StudentView(),new TerminalCmdView());//logging
+            CommandExecutableFactory commandExecutableFactoryImpl = new LoggingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()),new StudentView(),new TerminalCmdView());//logging
             CommandExecutable commandExecutable = commandExecutableFactoryImpl.create(cmds);
             if (commandExecutable != null) {
                 commandExecutable.execute();

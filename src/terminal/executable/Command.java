@@ -7,11 +7,8 @@ public class Command {
     private final static String REMOVE = "rm";
     private final static String REMBYNAME = "rm_by_nam";
     private final static String REMBYNUMBERANDYEAR = "rm_by_gn_and_yob";
-    private String InitCommand;
-    private List<String> arguments;
-
-//    public Command() {
-//    }
+    private final String InitCommand;
+    private final List<String> arguments;
 
     public Command(String initCommand, List<String> arguments) {
         this.InitCommand = initCommand;

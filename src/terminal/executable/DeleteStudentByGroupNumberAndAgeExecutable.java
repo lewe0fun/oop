@@ -16,6 +16,6 @@ public class DeleteStudentByGroupNumberAndAgeExecutable implements CommandExecut
 
     @Override
     public void execute() {
-        studentService.remove(new Student(groupNumber, yearOfBirth));
+        studentService.removeByYearAndGroupNumber(yearOfBirth, groupNumber);
     }
 }

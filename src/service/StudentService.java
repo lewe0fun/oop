@@ -26,4 +26,11 @@ public class StudentService {
         studentRepository.delete(student);
     }
 
+    public void removeByName(String firstName) {
+        studentRepository.deleteUserByName(firstName);
+    }
+
+    public void removeByYearAndGroupNumber(int yearOfBirth, int groupNumber) {
+        studentRepository.deleteUserByYearAndGroupNumber(yearOfBirth, groupNumber);
+    }
 }

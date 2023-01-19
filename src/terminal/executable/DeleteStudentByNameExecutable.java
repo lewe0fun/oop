@@ -14,6 +14,6 @@ public class DeleteStudentByNameExecutable implements CommandExecutable {
 
     @Override
     public void execute() {
-        studentService.remove(new Student(firstName));
+        studentService.removeByName(firstName);
     }
 }
