@@ -2,6 +2,7 @@ package terminal.executable;
 //убрать повторяющийся код
 import data.Student;
 import service.StudentService;
+import view.CreateStudentExecutableWithMagicView;
 import view.StudentView;
 import view.TerminalCmdView;
 
@@ -23,7 +24,7 @@ public class CommandExecutableFactoryImpl implements CommandExecutableFactory{
         if (input.isCr()) {
             studentView.printStudent(currentStudent);
             terminalCmdView.cr();
-            return new CreateStudentExecutable(studentService, currentStudent);
+            return new CreateStudentExecutableWithMagic(studentService, currentStudent,new CreateStudentExecutableWithMagicView());
         }
         if (input.isRm()) {
             studentView.printStudent(currentStudent);

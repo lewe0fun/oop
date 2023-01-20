@@ -3,7 +3,7 @@ package terminal.executable;
 import data.Student;
 import service.StudentService;
 
-public class CreateStudentExecutable implements CommandExecutable{
+public class CreateStudentExecutable implements CommandExecutable {
     private final StudentService studentService;
     private final Student student;
 
