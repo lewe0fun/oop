@@ -10,6 +10,6 @@ public class    StudentView extends UserView {
         return null;
     }
     public void printStudent(User student){
-        System.out.println("Student "+student.getFirstName()+" "+student.getLastName());
+        System.out.println("Student "+student.getFirstName());
     }
 }

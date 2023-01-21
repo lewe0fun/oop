@@ -4,9 +4,10 @@ import data.Student;
 import db.StudentTable;
 
 public class StudentRepository implements UserRepository<Student, Integer> {
-private StudentTable studentTable;
+private final StudentTable studentTable;
 
     public StudentRepository() {
+        studentTable=new StudentTable();
     }
 
     public StudentRepository(StudentTable studentTable) {
@@ -15,7 +16,8 @@ private StudentTable studentTable;
 
     @Override
     public Student save(Student entity) {
-        return null;
+        studentTable.save(entity);
+        return entity;
     }
 
     @Override
