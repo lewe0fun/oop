@@ -5,7 +5,8 @@ import java.util.List;
 public class Command {
     private final static String CREATE = "cr";
     private final static String REMOVE = "rm";
-    private final static String REMBYNAME = "rm_by_nam";
+    private final static String REMBYNAME = "del";
+    private final static String CRBYNAME = "ADD";
     private final static String REMBYNUMBERANDYEAR = "rm_by_gn_and_yob";
     private final String InitCommand;
     private final List<String> arguments;
@@ -51,8 +52,11 @@ public class Command {
         return InitCommand.equals("rm");
     }
 
-    public boolean isRm_by_name() {
-        return InitCommand.equals("rm_by_nam");
+    public boolean isDel() {
+        return InitCommand.equals("del");
+    }
+    public boolean isAdd() {
+        return InitCommand.equals("add");
     }
 
     public boolean isRm_by_gn_and_yob() {
@@ -61,10 +65,9 @@ public class Command {
 
     @Override
     public String toString() {
-        return "Command{" +
-                "InitCommand='" + InitCommand + '\'' +
-                ", arguments=" + arguments +
-                '}';
+        return "Входные данные - " +
+                "Команда:'" + InitCommand + '\'' +
+                ", аргументы:" + arguments;
     }
 }
 

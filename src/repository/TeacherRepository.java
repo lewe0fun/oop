@@ -31,6 +31,11 @@ public class TeacherRepository implements UserRepository<Teacher, Integer> {
     }
 
     @Override
+    public void createUserByName(String firstName) {
+
+    }
+
+    @Override
     public void deleteUserByYearAndGroupNumber(int yearOfBirth, int groupNumber) {
 
     }

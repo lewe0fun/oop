@@ -41,6 +41,11 @@ private final StudentTable studentTable;
     }
 
     @Override
+    public void createUserByName(String firstName) {
+        studentTable.save(new Student(firstName));
+    }
+
+    @Override
     public void deleteUserByYearAndGroupNumber(int yearOfBirth, int groupNumber) {
 
     }
