@@ -49,12 +49,12 @@ public class StudentGroupServiceImpl implements DataService<Student> {
     public void sortUsersByName(StudentGroup studentGroup) {
 
     }
-
+    @Override
     public StudentGroup saveGroup(StudentGroup group) {
         return studentGroupIntegerRepository.save(group);
     }
-
-    public StudentGroup findStudentGroupById(int id) {
+    @Override
+    public StudentGroup findStudentGroupById(Integer id) {
         return studentGroupIntegerRepository.findById(id);
     }
 }
