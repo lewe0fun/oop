@@ -11,7 +11,7 @@ public class CommandParserImpl implements CommandParser{
         String[]cmds=inputCommand.split("\\s+");
         String initCommand=cmds[0];
         List<String> arguments=new ArrayList<>();
-        for (int i=1;i< cmds.length-1;i++){
+        for (int i=1;i< cmds.length;i++){
             arguments.add(cmds[i]);
         }
         return new Command(initCommand,arguments);
