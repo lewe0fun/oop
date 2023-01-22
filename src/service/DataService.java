@@ -14,4 +14,8 @@ public interface DataService<U extends User> {
     void sortUsers(StudentGroup studentGroup);
 
     void sortUsersByName(StudentGroup studentGroup);
+
+    StudentGroup saveGroup(StudentGroup entity);
+
+    StudentGroup findStudentGroupById(Integer id);
 }

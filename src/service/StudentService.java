@@ -30,6 +30,10 @@ public class StudentService {
         studentRepository.deleteUserByName(firstName);
     }
 
+    public void createByName(String firstName) {
+        studentRepository.createUserByName(firstName);
+    }
+
     public void removeByYearAndGroupNumber(int yearOfBirth, int groupNumber) {
         studentRepository.deleteUserByYearAndGroupNumber(yearOfBirth, groupNumber);
     }

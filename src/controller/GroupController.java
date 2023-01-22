@@ -1,13 +1,18 @@
 package controller;
 
+import data.Student;
 import data.StudentGroup;
+import repository.GroupRepository;
+import repository.Repository;
+import service.DataService;
 import service.StudentGroupServiceImpl;
 
 public class GroupController implements Controller<StudentGroup, Integer> {
-    private final StudentGroupServiceImpl groupService;
+    private final DataService<Student> groupService;
 
-    public GroupController(StudentGroupServiceImpl groupService) {
-        this.groupService = groupService;
+    public GroupController() {
+        Repository<StudentGroup, Integer> groupRepository = new GroupRepository();
+        groupService = new StudentGroupServiceImpl(groupRepository);
     }
 
     public StudentGroup createGroup(int groupNumber) {
