@@ -8,11 +8,9 @@ import java.util.List;
 
 public class StudentGroupIterator implements Iterator<Student> {
     private int cursor;
-    private StudentGroup studentGroup;
-    private List<Student> students;
+    private final List<Student> students;
 
     public StudentGroupIterator(StudentGroup studentGroup) {
-        this.studentGroup = studentGroup;
         this.students = studentGroup.getStudentList();
     }
 

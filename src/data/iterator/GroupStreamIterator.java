@@ -8,11 +8,9 @@ import java.util.List;
 
 public class GroupStreamIterator implements Iterator<StudentGroup> {
     private int cursor;
-    private GroupStream groupStream;
-    private List<StudentGroup> studentGroups;
+    private final List<StudentGroup> studentGroups;
 
     public GroupStreamIterator(GroupStream groupStream) {
-        this.groupStream = groupStream;
         this.studentGroups = groupStream.getStudentGroup();
     }
 
