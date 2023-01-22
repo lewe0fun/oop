@@ -12,7 +12,7 @@ public class CreateStudentExecutableByName extends CommandView implements Comman
 
     public CreateStudentExecutableByName(Command command) {
         super();
-        studentService = new StudentService(new StudentRepository());
+        studentService = new StudentService();
         this.command = command;
     }
 

@@ -11,7 +11,7 @@ public class DeleteStudentByNameExecutable extends CommandView implements Comman
 
     public DeleteStudentByNameExecutable(Command command) {
         super();
-        studentService = new StudentService(new StudentRepository());
+        studentService = new StudentService();
         this.command = command;
     }
 

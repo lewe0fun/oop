@@ -12,7 +12,7 @@ public class DeleteStudentByGroupNumberAndAgeExecutable extends CommandView impl
 
     public DeleteStudentByGroupNumberAndAgeExecutable(Command command) {
         super();
-        studentService = new StudentService(new StudentRepository());
+        studentService = new StudentService();
         this.command = command;
     }
 

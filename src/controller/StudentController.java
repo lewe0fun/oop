@@ -2,14 +2,15 @@ package controller;
 
 import data.Student;
 import service.StudentService;
+import service.UserService;
 
 
 public class StudentController implements UserController<Student, Integer> {
 
-    private final StudentService studentService;
+    private final UserService<Student> studentService;
 
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+    public StudentController() {
+        studentService = new StudentService();
     }
 
     @Override

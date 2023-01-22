@@ -12,7 +12,7 @@ public class CreateStudentExecutable extends CommandView implements CommandExecu
 
     public CreateStudentExecutable(Command command) {
         super();
-        studentService = new StudentService(new StudentRepository());
+        studentService = new StudentService();
         this.command = command;
     }
 

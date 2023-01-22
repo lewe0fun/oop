@@ -12,7 +12,7 @@ public class DeleteStudentExecutable extends CommandView implements CommandExecu
 
     public DeleteStudentExecutable(Command command) {
         super();
-        studentService = new StudentService(new StudentRepository());
+        studentService = new StudentService();
         this.command = command;
     }
 
