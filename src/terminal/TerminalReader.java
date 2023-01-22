@@ -1,29 +1,24 @@
 package terminal;
 //только один экземпляр terminalReader
 
-import repository.StudentRepository;
-import service.StudentService;
 import terminal.executable.Command;
 import terminal.executable.CommandExecutable;
 import terminal.executable.CommandExecutableFactory;
 import terminal.executable.LoggingCommandExecutableFactoryImpl;
+import view.CommandView;
 import view.LoggingCommandExecutableFactoryImplView;
-import view.StudentView;
-import view.TerminalCmdView;
 
 import java.util.Scanner;
 
-public class TerminalReader {
+public class TerminalReader extends CommandView {
     private static TerminalReader terminalReader;//приватный статичный экземпляр класса
     private final CommandParser commandParser;//реализуем метод интерфейса через экземпляр класса для парсинга команд
     private final CommandExecutableFactory commandExecutableFactory;//абстракция для вызова метода
-    private final TerminalCmdView terminalCmdView;
 
 
     private TerminalReader() {
-        terminalCmdView = new TerminalCmdView();
-        commandParser = new CommandParserImpl();//реализация интерфейса
-        commandExecutableFactory = new LoggingCommandExecutableFactoryImpl(new LoggingCommandExecutableFactoryImplView());
+        commandParser = new CommandParserImpl();//реализация парсера
+        commandExecutableFactory = new LoggingCommandExecutableFactoryImpl(new LoggingCommandExecutableFactoryImplView());//реализация фабрики
     }//приватный конструктор
 
     public static TerminalReader getInstance() {
@@ -35,19 +30,16 @@ public class TerminalReader {
 
     public void listen() {
         Scanner sc = new Scanner(System.in);
-        String cmd = "";
+        String cmd;
         while (true) {
             terminalCmdView.wellcome();
             cmd = sc.nextLine();
-            if (cmd.equals("exit")) {
+            if (cmd.equals("exit"))
                 break;
-            }
             Command cmds = commandParser.parseCommand(cmd);//парсинг команд
             CommandExecutable commandExecutable = commandExecutableFactory.create(cmds);
-
-            if (commandExecutable != null) {
+            if (commandExecutable != null)
                 commandExecutable.execute();
-            }
         }
     }
 }

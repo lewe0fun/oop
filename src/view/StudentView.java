@@ -1,15 +1,15 @@
 package view;
 
-import data.User;
+import data.Student;
 
 import java.util.List;
 
-public class    StudentView extends UserView {
+public class StudentView extends UserView<Student> {
     @Override
-    public User findUser(List<User> userList) {
+    public Student findUser(List<Student> userList) {
         return null;
     }
-    public void printStudent(User student){
-        System.out.println("Student "+student.getFirstName());
+    public void printStudent(Student student){
+        System.out.println("Student: "+student.getFirstName());
     }
 }

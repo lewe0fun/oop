@@ -1,12 +1,12 @@
 package view;
 
-import data.User;
+import data.Teacher;
 
 import java.util.List;
 
-public class TeacherView extends UserView {
+public class TeacherView extends UserView<Teacher> {
     @Override
-    public User findUser(List<User> userList) {
+    public Teacher findUser(List<Teacher> userList) {
         return null;
     }
 }
