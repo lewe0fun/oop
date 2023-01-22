@@ -23,7 +23,7 @@ public class TerminalReader {
     private TerminalReader() {
         terminalCmdView = new TerminalCmdView();
         commandParser = new CommandParserImpl();//реализация интерфейса
-        commandExecutableFactory = new LoggingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()), new StudentView(), new TerminalCmdView(), new LoggingCommandExecutableFactoryImplView());
+        commandExecutableFactory = new LoggingCommandExecutableFactoryImpl(new LoggingCommandExecutableFactoryImplView());
     }//приватный конструктор
 
     public static TerminalReader getInstance() {

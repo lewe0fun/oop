@@ -1,19 +1,27 @@
 package terminal.executable;
 
+import repository.StudentRepository;
 import service.StudentService;
+import view.CommandView;
 
-public class CreateStudentExecutableByName implements CommandExecutable{
+
+public class CreateStudentExecutableByName extends CommandView implements CommandExecutable {
     private final StudentService studentService;
-    private final String firstName;
+    private final Command command;
 
-    public CreateStudentExecutableByName(StudentService studentService, String firstName) {
-        this.studentService = studentService;
-        this.firstName = firstName;
+
+    public CreateStudentExecutableByName(Command command) {
+        super();
+        studentService = new StudentService(new StudentRepository());
+        this.command = command;
     }
 
     @Override
     public void execute() {
-        studentService.createByName(firstName);
+        if (!command.getArguments().isEmpty()) {
+            studentService.createByName(command.getFirstArgument());
+            printCommand(command);
+        }
     }
 
 }

@@ -6,9 +6,9 @@ import view.CreateStudentExecutableWithMagicView;
 
 public class CreateStudentExecutableWithMagic extends CreateStudentExecutable {
     private final CreateStudentExecutableWithMagicView createStudentExecutableWithMagicView;
-    public CreateStudentExecutableWithMagic(StudentService studentService, Student student,CreateStudentExecutableWithMagicView createStudentExecutableWithMagicView) {
-        super(studentService, student);
-        this.createStudentExecutableWithMagicView=createStudentExecutableWithMagicView;
+    public CreateStudentExecutableWithMagic(Command command) {
+        super(command);
+        createStudentExecutableWithMagicView=new CreateStudentExecutableWithMagicView();
     }
 
     @Override

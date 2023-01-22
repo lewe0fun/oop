@@ -1,20 +1,27 @@
 package terminal.executable;
 
 import data.Student;
+import repository.StudentRepository;
 import service.StudentService;
+import view.CommandView;
 
-public class DeleteStudentExecutable implements CommandExecutable {
-    protected final StudentService studentService;
-    protected final Student student;
+public class DeleteStudentExecutable extends CommandView implements CommandExecutable {
+    private final StudentService studentService;
+    private final Command command;
 
-    public DeleteStudentExecutable(StudentService studentService, Student student) {
-        this.studentService = studentService;
-        this.student = student;
+
+    public DeleteStudentExecutable(Command command) {
+        super();
+        studentService = new StudentService(new StudentRepository());
+        this.command = command;
     }
 
     @Override
     public void execute() {
-        studentService.remove(student);
+        if (command.getArguments().size() == 7) {
+            studentService.remove(new Student(command.getFirstArgument(), command.getSecondArgument(), Integer.parseInt(command.getThirdArgument()), command.getFourthArgument(), Integer.parseInt(command.getFifthArgument()), Integer.parseInt(command.getSixthArgument()), Integer.parseInt(command.getSeventhArgument())));
+            printCommand(command);
+        }
     }
 
 }

@@ -26,13 +26,13 @@ public class TeacherRepository implements UserRepository<Teacher, Integer> {
     }
 
     @Override
-    public void deleteUserByName(String FirstName) {
-
+    public Teacher deleteUserByName(String FirstName) {
+        return null;
     }
 
     @Override
-    public void createUserByName(String firstName) {
-
+    public Teacher createUserByName(String firstName) {
+        return null;
     }
 
     @Override

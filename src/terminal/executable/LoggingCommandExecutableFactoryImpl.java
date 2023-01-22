@@ -1,14 +1,11 @@
 package terminal.executable;
 
-import service.StudentService;
 import view.LoggingCommandExecutableFactoryImplView;
-import view.StudentView;
-import view.TerminalCmdView;
 
 public class LoggingCommandExecutableFactoryImpl extends CommandExecutableFactoryImpl {
 private final LoggingCommandExecutableFactoryImplView loggingCommandExecutableFactoryImplView;
-    public LoggingCommandExecutableFactoryImpl(StudentService studentService, StudentView studentView, TerminalCmdView terminalCmdView,LoggingCommandExecutableFactoryImplView loggingCommandExecutableFactoryImplView) {
-        super(studentService,studentView,terminalCmdView);
+    public LoggingCommandExecutableFactoryImpl(LoggingCommandExecutableFactoryImplView loggingCommandExecutableFactoryImplView) {
+        super();
         this.loggingCommandExecutableFactoryImplView=loggingCommandExecutableFactoryImplView;
     }
 

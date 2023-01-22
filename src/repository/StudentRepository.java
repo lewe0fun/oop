@@ -36,13 +36,13 @@ private final StudentTable studentTable;
     }
 
     @Override
-    public void deleteUserByName(String firstName) {
-        studentTable.removeByName(firstName);
+    public Student deleteUserByName(String firstName) {
+        return studentTable.removeByName(firstName);
     }
 
     @Override
-    public void createUserByName(String firstName) {
-        studentTable.save(new Student(firstName));
+    public Student createUserByName(String firstName) {
+        return studentTable.save(new Student(firstName));
     }
 
     @Override

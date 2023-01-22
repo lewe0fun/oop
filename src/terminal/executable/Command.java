@@ -70,5 +70,13 @@ public class Command {
                 "Команда:'" + InitCommand + '\'' +
                 ", аргументы:" + arguments;
     }
+
+    public String getInitCommand() {
+        return InitCommand;
+    }
+
+    public List<String> getArguments() {
+        return arguments;
+    }
 }
 

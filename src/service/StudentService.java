@@ -27,7 +27,7 @@ public class StudentService {
     }
 
     public void removeByName(String firstName) {
-        studentRepository.deleteUserByName(firstName);
+       studentRepository.deleteUserByName(firstName);
     }
 
     public void createByName(String firstName) {

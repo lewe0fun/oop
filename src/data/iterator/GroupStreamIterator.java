@@ -18,12 +18,12 @@ public class GroupStreamIterator implements Iterator<StudentGroup> {
 
     @Override
     public boolean hasNext() {
-        return cursor++ < studentGroups.size();
+        return cursor < studentGroups.size();
     }
 
     @Override
     public StudentGroup next() {
-        return studentGroups.get(cursor);
+        return studentGroups.get(cursor++);
     }
 
     @Override

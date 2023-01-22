@@ -1,20 +1,26 @@
 package terminal.executable;
 
+import data.Student;
+import repository.StudentRepository;
 import service.StudentService;
+import view.CommandView;
 
-public class DeleteStudentByGroupNumberAndAgeExecutable implements CommandExecutable {
+public class DeleteStudentByGroupNumberAndAgeExecutable extends CommandView implements CommandExecutable {
     private final StudentService studentService;
-    private final int groupNumber;
-    private final int yearOfBirth;
+    private final Command command;
 
-    public DeleteStudentByGroupNumberAndAgeExecutable(StudentService studentService, int groupNumber, int yearOfBirth) {
-        this.studentService = studentService;
-        this.groupNumber = groupNumber;
-        this.yearOfBirth = yearOfBirth;
+
+    public DeleteStudentByGroupNumberAndAgeExecutable(Command command) {
+        super();
+        studentService = new StudentService(new StudentRepository());
+        this.command = command;
     }
 
     @Override
     public void execute() {
-        studentService.removeByYearAndGroupNumber(yearOfBirth, groupNumber);
+        if (command.getArguments().size() == 2) {
+            studentService.removeByYearAndGroupNumber(Integer.parseInt(command.getSixthArgument()), Integer.parseInt(command.getSeventhArgument()));
+            printCommand(command);
+        }
     }
 }

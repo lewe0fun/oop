@@ -18,12 +18,12 @@ public class StudentGroupIterator implements Iterator<Student> {
 
     @Override
     public boolean hasNext() {
-        return cursor++ < students.size();
+        return cursor < students.size();
     }
 
     @Override
     public Student next() {
-        return students.get(cursor);
+        return students.get(cursor++);
     }
 
     @Override
