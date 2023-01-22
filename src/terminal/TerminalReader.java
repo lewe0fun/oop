@@ -11,7 +11,6 @@ import view.LoggingCommandExecutableFactoryImplView;
 import view.StudentView;
 import view.TerminalCmdView;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class TerminalReader {
@@ -22,9 +21,8 @@ public class TerminalReader {
 
 
     private TerminalReader() {
-//        this.commandParser = commandParser;
         terminalCmdView = new TerminalCmdView();
-        commandParser = new CommandParserImpl();
+        commandParser = new CommandParserImpl();//реализация интерфейса
         commandExecutableFactory = new LoggingCommandExecutableFactoryImpl(new StudentService(new StudentRepository()), new StudentView(), new TerminalCmdView(), new LoggingCommandExecutableFactoryImplView());
     }//приватный конструктор
 

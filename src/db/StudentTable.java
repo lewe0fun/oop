@@ -1,9 +1,6 @@
 package db;
 
-import data.GroupStream;
 import data.Student;
-
-import java.util.List;
 
 public class StudentTable extends Table<Student>{
 

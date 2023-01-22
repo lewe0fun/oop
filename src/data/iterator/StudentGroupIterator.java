@@ -3,8 +3,8 @@ package data.iterator;
 import data.Student;
 import data.StudentGroup;
 
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
 public class StudentGroupIterator implements Iterator<Student> {
     private int cursor;

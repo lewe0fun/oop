@@ -39,7 +39,7 @@ public class CommandExecutableFactoryImpl implements CommandExecutableFactory{
         }
         if (input.isAdd()) {
             studentView.printStudent(new Student(input.getFirstArgument()));
-            terminalCmdView.rm();
+            terminalCmdView.cr();
             return new CreateStudentExecutableByName(studentService, input.getFirstArgument());
         }
         if (input.isRm_by_gn_and_yob()) {

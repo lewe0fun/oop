@@ -1,6 +1,5 @@
 package service;
 
-import data.Student;
 import data.Teacher;
 import repository.TeacherRepository;
 

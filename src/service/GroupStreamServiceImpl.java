@@ -3,8 +3,8 @@ package service;
 import data.GroupStream;
 import data.comparator.GroupStreamComparator;
 
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public class GroupStreamServiceImpl implements StreamService<GroupStream, Integer> {
     @Override
